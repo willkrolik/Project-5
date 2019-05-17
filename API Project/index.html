@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact Page</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" href="#openModal" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="scripts.js"></script>
+
+
+
+
+
+
+    <!---Modal #1 --> 
+    
+    <button class="trigger">Click here to trigger the modal!</button>
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button">×</span>
+        <h1>Hello, I am a modal!</h1>
+    </div>
+</div>
+
+
+
+<!---Modal #2 --> 
+<a href="#openModal">Open Modal</a>
+
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<h2 id="extra">More Info.</h2>
+		<p class="lineOne">Test text</p>
+		<p class="lineTwo"></p>
+	</div>
+</div>
+
+
+
+
+
+
+  </body>
+</html>
