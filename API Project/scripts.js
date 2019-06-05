@@ -1,8 +1,11 @@
 let userArray = [];
-window.onload =  $.when(cardMaker()).then(modalMaker());
 
+window.onload =  
 
-function cardMaker() {
+ () => {
+  return cardMaker(modalMaker)
+}
+function cardMaker(onComplete) {
   const gallery = $(".gallery");
   
 
@@ -32,13 +35,14 @@ function cardMaker() {
 
         gallery.append(employeeHtml);
       });
+      onComplete();
     } else {
       const errorMessage = document.createElement("marquee");
       errorMessage.textContent = `Gah, it's not working!`;
       app.appendChild(errorMessage);
     }
   };
-  modalMaker();
+  
   request.send();
   
   
@@ -47,6 +51,7 @@ function cardMaker() {
 
 function modalMaker() {
   let cards = document.querySelectorAll(".card");
+  
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", function() {
       let person = userArray[i];
@@ -78,8 +83,20 @@ function modalMaker() {
             
         </div>`;
 
-      //modalContainer.style.display = "block";
+     
       document.body.innerHTML += modalHtml;
+      let closeModalBtn = document.getElementById('modal-close-btn');
+      let modalContainer = document.querySelector('.modal-container');
+      let modalData = document.querySelector('.modal');
+        closeModalBtn.addEventListener('click', function(){
+            modalContainer.style.display = 'none';
+            modalData.innerHTML = '';
+    })
     });
+    //add button here
+    
+
   }
+  
 }
+ 
