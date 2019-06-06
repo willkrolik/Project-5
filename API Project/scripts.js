@@ -1,3 +1,4 @@
+
 let userArray = [];
 
 window.onload =  
@@ -85,18 +86,30 @@ function modalMaker() {
 
      
       document.body.innerHTML += modalHtml;
+      console.log('clicking');
       let closeModalBtn = document.getElementById('modal-close-btn');
       let modalContainer = document.querySelector('.modal-container');
       let modalData = document.querySelector('.modal');
         closeModalBtn.addEventListener('click', function(){
-            modalContainer.style.display = 'none';
-            modalData.innerHTML = '';
+          
+            modalContainer.style.display += 'none';
+            modalData.innerHTML += '';
+            location.reload();
     })
     });
-    //add button here
+    
     
 
   }
   
 }
  
+
+
+/*
+const element = event.target.parentNode.parentNode.parentNode;
+          const parent = element.parentNode;
+          console.log(parent);
+          console.log(element);
+          console.log(event.target);
+          parent.removeChild(element);*/
